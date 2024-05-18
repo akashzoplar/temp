@@ -849,46 +849,6 @@
                 </section>
 
             </div><!-- /.content-wrapper -->
-            <footer class="main-footer hidden-print" style="display:grid;flex-direction:column;">
-
-                <div class="1hidden-xs pull-left">
-                    <div class="pull-left" >
-                        <a target="_blank" href="https://InventoryManagerapp.com" rel="noopener">Inventory Manager</a> is open source software,
-                        made with <i class="fas fa-heart" style="color: #a94442; font-size: 10px" aria-hidden="true"></i><span
-                                class="sr-only">love</span> by <a href="https://twitter.com/InventoryManagerapp" rel="noopener">@InventoryManagerapp</a>.
-                    </div>
-                    <div class="pull-right">
-                    @if ($InventoryManagerSettings->version_footer!='off')
-                        @if (($InventoryManagerSettings->version_footer=='on') || (($InventoryManagerSettings->version_footer=='admin') && (Auth::user()->isSuperUser()=='1')))
-                            &nbsp; <strong>Version</strong> {{ config('version.app_version') }} -
-                            build {{ config('version.build_version') }} ({{ config('version.branch') }})
-                        @endif
-                    @endif
-
-                    @if ($InventoryManagerSettings->support_footer!='off')
-                        @if (($InventoryManagerSettings->support_footer=='on') || (($InventoryManagerSettings->support_footer=='admin') && (Auth::user()->isSuperUser()=='1')))
-                            <a target="_blank" class="btn btn-default btn-xs"
-                               href="https://Inventory Manager.readme.io/docs/overview"
-                               rel="noopener">{{ trans('general.user_manual') }}</a>
-                            <a target="_blank" class="btn btn-default btn-xs" href="https://InventoryManagerapp.com/support/"
-                               rel="noopener">{{ trans('general.bug_report') }}</a>
-                        @endif
-                    @endif
-
-                    @if ($InventoryManagerSettings->privacy_policy_link!='')
-                        <a target="_blank" class="btn btn-default btn-xs" rel="noopener"
-                           href="{{  $InventoryManagerSettings->privacy_policy_link }}"
-                           target="_new">{{ trans('admin/settings/general.privacy_policy') }}</a>
-                    @endif
-                    </div>
-                    <br>
-                    @if ($InventoryManagerSettings->footer_text!='')
-                        <div class="pull-left">
-                            {!!  Helper::parseEscapedMarkedown($InventoryManagerSettings->footer_text)  !!}
-                        </div>
-                    @endif
-                </div>
-            </footer>
         </div><!-- ./wrapper -->
 
 
